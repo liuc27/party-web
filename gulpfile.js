@@ -6,14 +6,13 @@ var runSequence = require("run-sequence");
 var del = require("del");
 
 gulp.task("ts", function() {
-  var options = {
-    out: 'main.js'
-  };
+  var options = {};
   gulp.src([
         "./public/typescripts/*.ts"
       ])
       .pipe(typescript(options))
-      .pipe(gulp.dest('./dest'));
+      .js
+      .pipe(gulp.dest('./public/javascripts/'));
 });
 
 gulp.task("watch", function(){
